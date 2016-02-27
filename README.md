@@ -11,10 +11,10 @@ of the game. This project stretched our abilities in inheritance,
 polymorphism, recursion, and our knowledge of the C++ STL. I hope to
 never go through such pain again.
 
-## What I Wrote
+## My Code
 I wrote all of Actors.h, Actors.cpp, StudentWorld.h, StudentWorld.cpp.
 <br>
-We were given the restof the files.
+We were given the rest of the files.
 
 ## Objective
 You, the player, must play as the Frackman and help him find all the oil
