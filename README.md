@@ -20,8 +20,10 @@ chasing the Frackman off. Maneuver your way through hardcore protesters
 and boulders to become a FrackMan Hero!
 
 ## Controls
+<pre>
 The Arrow Keys - Moves the Frackman around the oil field
 Space Bar      - Shoots water from the Frackman's squirt gun
 Tab            - Drops a gold nugget to bribe any chasing protesters
 Z or z         - Uses a sonar charge to reveal nearby hidden objects
 Esc            - Restarts the level at the cost of a life
+</pre>
