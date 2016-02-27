@@ -1,4 +1,5 @@
 # Welcome to FrackMan!
+## Storyline
 It was the middle of Winter quarter 2016 here at UCLA when
 the students of CS 32 with Professors Carey Nachenberg
 and David Smallberg were faced with the task of building
@@ -9,6 +10,11 @@ superclasses and subclasses that formed the interface
 of the game. This project stretched our abilities in inheritance,
 polymorphism, recursion, and our knowledge of the C++ STL. I hope to
 never go through such pain again.
+
+## What I Wrote
+I wrote all of Actors.h, Actors.cpp, StudentWorld.h, StudentWorld.cpp.
+<br>
+We were given the restof the files.
 
 ## Objective
 You, the player, must play as the Frackman and help him find all the oil
