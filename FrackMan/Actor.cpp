@@ -18,19 +18,6 @@ const int LEAVING = 6;
 const int STUNNED = 7;
 const int RESTING = 8;
 
-class Coordinate
-{
-public:
-	Coordinate(int x, int y) { m_x = x; m_y = y; }
-	int x() { return m_x; }
-	int y() { return m_y; }
-private:
-	int m_x;
-	int m_y;
-};
-
-
-
 Actor::Actor(int id, int x, int y, Direction dir, double size, unsigned int depth,
 	StudentWorld* studentWorldPointer)
 	: GraphObject(id, x, y, dir, size, depth)
@@ -313,7 +300,7 @@ void FrackMan::doSomething()
 RegularProtester::RegularProtester(int x, int y, StudentWorld* studentWorldPointer)
 	: Agent(IID_PROTESTER, x, y, left, 1, 0, studentWorldPointer, 5)
 {
-	m_state = STAYING; // all regular Protesters are in the NOT LEAVING state
+	m_state = STAYING;
 	m_movementsLeft = studentWorldPointer->randInt(8, 60);
 	int level = studentWorldPointer->getLevel();
 	m_timeBetweenMoves = max(0, 3 - (level / 4));
@@ -356,11 +343,7 @@ bool RegularProtester::addGold()
 
 bool RegularProtester::updateMaze(int maze[][60], int sx, int sy, int m)
 {
-	queue<Coordinate> coordQueue;
-	Coordinate start(sx, sy); // create starting coordinate
-	coordQueue.push(start);
-	maze[sx][sy] = m; // assign first breadcrumb
-	return true;
+	return false;
 }
 
 void RegularProtester::lookForFrackMan()
@@ -624,55 +607,6 @@ void RegularProtester::doSomething()
 	}
 }
 
-HardcoreProtester::HardcoreProtester(int x, int y, StudentWorld* studentWorldPointer)
-	: Agent(IID_HARD_CORE_PROTESTER, x, y, left, 1, 0, studentWorldPointer, 20)
-{
-	m_state = STAYING; // all hardcore Protesters are in the NOT LEAVING state
-	m_movementsLeft = studentWorldPointer->randInt(8, 60);
-	int level = studentWorldPointer->getLevel();
-	m_timeBetweenMoves = max(0, 3 - (level / 4));
-	m_timer = 0;
-}
-
-bool HardcoreProtester::annoy(int amt)
-{
-	decHealth(amt);
-	if (health() == 0 && m_state != LEAVING) // if he died from being annoyed
-	{
-		studentWorld()->playSound(SOUND_PROTESTER_GIVE_UP);
-		m_state = LEAVING;
-	}
-	else if (m_state == STAYING || m_state == STUNNED)
-	{
-		studentWorld()->playSound(SOUND_PROTESTER_ANNOYED);
-		m_state = STUNNED;
-	}
-	return true;
-}
-
-bool HardcoreProtester::addGold()
-{
-	m_state = LEAVING;
-	studentWorld()->playSound(SOUND_PROTESTER_FOUND_GOLD);
-	return true;
-}
-
-void HardcoreProtester::doSomething()
-{
-	if (isDead()) // if the RegularProtester is dead
-		return; // return immediately
-	if (m_timer < m_timeBetweenMoves)
-		m_timer++;
-	else if (m_timer == m_timeBetweenMoves && m_state == STAYING)
-	{
-		m_timer = 0; // reset the Protester's timer
-					 // implement movement swich statement
-		moveToIfPossible(getX() - 1, getY());
-	}
-	else if (health() == 0)
-		moveTo(getX() + 1, getY());
-}
-
 Dirt::Dirt(int x, int y, StudentWorld* studentWorldPointer)
 	: Actor(IID_DIRT, x, y, right, 0.25, 3, studentWorldPointer)
 {}
@@ -863,7 +797,7 @@ ActivatingObject::~ActivatingObject() {}
 Barrel::Barrel(int x, int y, StudentWorld* studentWorldPointer)
 	: ActivatingObject(IID_BARREL, x, y, right, 1, 2, studentWorldPointer)
 {
-	setVisible(false);
+	setVisible(true); // TODO: at the end, this is supposed to be false
 }
 
 void Barrel::doSomething()
@@ -892,7 +826,7 @@ Gold::Gold(int x, int y, StudentWorld* studentWorldPointer, int state)
 {
 	if (state == PERMANENT)
 	{
-		setVisible(false); //NOTE, WILL NEED TO SET INVISIBLE BY THE TIME YOU TURN THIS IN
+		setVisible(true); // at the end, set this to false
 		m_state = state;
 	}
 	else if (state == TEMPORARY) // means that the FrackMan dropped it to excite a Protester

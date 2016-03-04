@@ -224,9 +224,10 @@ bool StudentWorld::spawnProtester()
 		int probabilityNumber = (getLevel() * 10) + 30;
 		int probabilityOfHardcore = min(90, probabilityNumber);
 		int RNG = randInt(1, probabilityOfHardcore);
-		if (RNG == 2)
-			m_actors.push_back(new HardcoreProtester(60, 60, this));
-		else
+		// UNCOMMENT THIS PART WHEN YOU IMPLEMENT HARDCORE PROTESTORS
+		//if (RNG == 2)
+		//	m_actors.push_back(new HardcoreProtester(60, 60, this));
+		//else
 			m_actors.push_back(new RegularProtester(60, 60, this));
 		m_nProtesters++;
 		return true;

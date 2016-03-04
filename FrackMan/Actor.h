@@ -9,11 +9,11 @@ class Actor : public GraphObject
 public:
 	Actor(int id, int x, int y, Direction dir, double size, unsigned int depth, 
 		StudentWorld* studentWorldPointer);
-	StudentWorld* studentWorld() const;
-	bool isDead() const;
-	void setDead();
-	virtual bool canPassThroughMe();
-	virtual bool canPickMeUp();
+	StudentWorld* studentWorld() const; // all actors have a studentWorld
+	bool isDead() const; // all actors nead to have an alive status
+	void setDead(); // all actors need to be toggled alive or dead
+	virtual bool canPassThroughMe(); // all actors need to tell me if they can pass through boulders
+	virtual bool canPickMeUp(); // all actors have a special pick up method
 	virtual bool canBeAnnoyed();
 	virtual bool canDigThroughDirt();
 	virtual bool annoy(int amt);
@@ -79,26 +79,6 @@ public:
 	bool updateMaze(int maze[][60], int sx, int sy, int m);
 	virtual void doSomething();
 	virtual ~RegularProtester() {};
-private:
-	int m_state;
-	int m_movementsLeft;
-	int m_timeBetweenMoves;
-	int m_timer;
-	int m_stunCounter;
-	int m_turningCounter;
-	int m_resting;
-	int m_exitMap[64][60];
-	int m_FrackManMap[64][60];
-};
-
-class HardcoreProtester : public Agent
-{
-public:
-	HardcoreProtester(int x, int y, StudentWorld* studentWorldPointer);
-	virtual bool annoy(int amt);
-	virtual bool addGold();
-	virtual void doSomething();
-	virtual ~HardcoreProtester() {}
 private:
 	int m_state;
 	int m_movementsLeft;
