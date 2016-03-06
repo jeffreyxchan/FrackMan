@@ -48,3 +48,8 @@ Gold Nuggets   - Collect these for more points, or to bribe chasing protesters
 Sonar Kits     - Spawns randomly and temporarily. Grants 2 sonar charges when collected
 Water Pool     - Spawns randomly and temporarily. Replenishes Frackman's water supply
 </pre>
+
+## Progress Log
+3/5/16 - Most of the basic functionalities of the game are implemented. I just haven't finished up getting the protestors to hunt
+down the FrackMan and getting them to leave the field when they've been annoyed too much. As I find freee time in the future,
+I'll definitely be coming back to finish the job.
