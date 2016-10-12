@@ -10,11 +10,17 @@ superclasses and subclasses that formed the interface
 of the game. This project stretched our abilities in inheritance,
 polymorphism, recursion, and our knowledge of the C++ STL. I hope to
 never go through such pain again.
-
-## My Code
-I wrote all of Actors.h, Actors.cpp, StudentWorld.h, StudentWorld.cpp.
+<br><br>
+The code I wrote for this project is contained in Actors.h, Actors.cpp,
+StudentWorld.h, and StudentWorld.cpp.
 <br>
 We were given the rest of the files.
+
+## How to Launch the Game
+If you're interested in playing the game, download the zip file on the repo
+and extract the files. Within the 'FrackMan' folder, navigate into the 'Debug'
+folder. There, you can double click the FrackMan.exe file to play the game.
+Hopefully it works.
 
 ## Objective
 You, the player, must play as the Frackman and help him find all the oil
@@ -42,3 +48,8 @@ Gold Nuggets   - Collect these for more points, or to bribe chasing protesters
 Sonar Kits     - Spawns randomly and temporarily. Grants 2 sonar charges when collected
 Water Pool     - Spawns randomly and temporarily. Replenishes Frackman's water supply
 </pre>
+
+## Progress Log
+3/5/16 - Most of the basic functionalities of the game are implemented. I just haven't finished up getting the protestors to hunt
+down the FrackMan and getting them to leave the field when they've been annoyed too much. As I find freee time in the future,
+I'll definitely be coming back to finish the job.
