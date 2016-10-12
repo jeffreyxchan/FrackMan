@@ -1,35 +1,11 @@
 # Welcome to FrackMan!
-## Storyline
-It was the middle of Winter quarter 2016 here at UCLA when
-the students of CS 32 with Professors Carey Nachenberg
-and David Smallberg were faced with the task of building
-a video game. We were provided with a code skeleton that
-contained all the graphical tools that we needed to run and
-display the game. The real task was to write all the 
-superclasses and subclasses that formed the interface
-of the game. This project stretched our abilities in inheritance,
-polymorphism, recursion, and our knowledge of the C++ STL. I hope to
-never go through such pain again.
-<br><br>
-The code I wrote for this project is contained in Actors.h, Actors.cpp,
-StudentWorld.h, and StudentWorld.cpp.
-<br>
-We were given the rest of the files.
+## Description
+A game coded in C++. The player has to help navigate the Frackman around the oil field until he finds all
+the oil barrels. There are various other items along the way
+along with Protestors that want to force the Frackman to leave the field. Developing this game tested proper
+object-oriented programming, inheritance, polymorphism, and recursion.
 
-## How to Launch the Game
-If you're interested in playing the game, download the zip file on the repo
-and extract the files. Within the 'FrackMan' folder, navigate into the 'Debug'
-folder. There, you can double click the FrackMan.exe file to play the game.
-Hopefully it works.
-
-## Objective
-You, the player, must play as the Frackman and help him find all the oil
-barrels within oil field. Dig around to find all the hidden oil barrels
-that lie within the field find some extra treasures while you're at it.
-But the Frackman isn't alone in this oil field. Protesters, who are opposed
-to the FrackMan's schenanigans spawn onto the oil field in hopes of
-chasing the Frackman off. Maneuver your way through hardcore protesters
-and falling boulders to become a FrackMan Hero!
+The game can be played by running the executable within the Debug Folder.
 
 ## Controls
 <pre>
@@ -48,8 +24,3 @@ Gold Nuggets   - Collect these for more points, or to bribe chasing protesters
 Sonar Kits     - Spawns randomly and temporarily. Grants 2 sonar charges when collected
 Water Pool     - Spawns randomly and temporarily. Replenishes Frackman's water supply
 </pre>
-
-## Progress Log
-3/5/16 - Most of the basic functionalities of the game are implemented. I just haven't finished up getting the protestors to hunt
-down the FrackMan and getting them to leave the field when they've been annoyed too much. As I find freee time in the future,
-I'll definitely be coming back to finish the job.
